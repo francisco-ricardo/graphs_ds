@@ -1,0 +1,17 @@
+dist/
+build/
+
+.vscode/
+.vstags
+
+*.log
+*~
+.#*
+~*
+
+*.class
+
+tmp/
+misc/
+logs/
+bin/
