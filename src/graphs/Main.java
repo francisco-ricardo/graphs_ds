@@ -1,40 +1,29 @@
+package graphs;
+
+import graphs.Graph;
+
 public class Main {
-
     public static void main(String[] args) {
+        Graph ourGraph = new Graph();
 
-        Graph myGraph = new Graph();
+        // vertices
+        Vertex v0 = new Vertex("0");
+        Vertex v1 = new Vertex("1");
+        Vertex v2 = new Vertex("2");
+        Vertex v3 = new Vertex("3");
 
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addVertex("C");
-        myGraph.addVertex("D");
+        ourGraph.AddVertex(v0);
+        ourGraph.AddVertex(v1);
+        ourGraph.AddVertex(v2);
+        ourGraph.AddVertex(v3);
 
-        myGraph.addEdge("A", "B");
-        myGraph.addEdge("A", "C");
-        myGraph.addEdge("A", "D");
-        myGraph.addEdge("B", "D");
-        myGraph.addEdge("C", "D");
+        // edges
+        ourGraph.AddEdge(v0, v1, 2);
+        ourGraph.AddEdge(v1, v2, 3);
+        ourGraph.AddEdge(v2, v0, 1);
+        ourGraph.AddEdge(v2, v3, 1);
+        ourGraph.AddEdge(v3, v2, 4);
 
-
-        System.out.println("\nGraph before removeVertex():");
-        myGraph.printGraph();
-
-        myGraph.removeVertex("D");
-
-        System.out.println("\nGraph after removeVertex():");
-        myGraph.printGraph();
-        
-        /*
-            EXPECTED OUTPUT:
-            ----------------
-            Graph before removeVertex():
-            {A=[B, C, D], B=[A, D], C=[A, D], D=[A, B, C]}
-            
-            Graph after removeVertex():
-            {A=[B, C], B=[A], C=[A]}
-
-        */
-
+        ourGraph.printGraph();
     }
-
 }

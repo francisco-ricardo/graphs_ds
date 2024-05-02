@@ -1,49 +1,34 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+package graphs;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+
+import graphs.Vertex;
 
 
-public class Graph {
+class Graph {
+    private HashSet<Vertex> vertices;
 
-    private HashMap<String, ArrayList<String>> adjList = new HashMap<>();
+    public Graph() {
+        vertices = new HashSet<>();
+    }
+
+    public boolean AddEdge(Vertex v1, Vertex v2, int weight) {
+        return v1.getEdges().add(new Edge(v2, weight)) && v2.getEdges().add(new Edge(v1, weight));
+    }
+
+    public boolean AddVertex(Vertex v) {
+        return vertices.add(v);
+    }
 
     public void printGraph() {
-        System.out.println(adjList);
-    }
-
-    public boolean addVertex(String vertex) {
-        if (adjList.get(vertex) == null) {
-            adjList.put(vertex, new ArrayList<String>());
-            return true;
+        for (Vertex v: vertices) {
+            System.out.print("vertex name: " + v.getName() + ":\n");
+            for (Edge e: v.getEdges()) {
+                System.out.print("destVertex: " + e.getDestVertex().getName() + ", weight: " + e.getWeight() + "\n");
+            }
+            System.out.print("\n");
         }
-        return false;
     }
-
-    public boolean addEdge(String vertex1, String vertex2) {
-        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
-            adjList.get(vertex1).add(vertex2);
-            adjList.get(vertex2).add(vertex1);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean removeEdge(String vertex1, String vertex2) {
-        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
-            adjList.get(vertex1).remove(vertex2);
-            adjList.get(vertex2).remove(vertex1);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean removeVertex(String vertex) {
-        if (adjList.get(vertex) == null) return false;
-        for (String otherVertex : adjList.get(vertex)) {
-            adjList.get(otherVertex).remove(vertex);
-        }
-        adjList.remove(vertex);
-        return true;
-    }
-
 }
 
