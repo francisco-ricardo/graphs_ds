@@ -1,6 +1,6 @@
-package graphs;
+package edgelist;
 
-import graphs.Vertex;
+import edgelist.Vertex;
 
 class Edge {
     private int weight;

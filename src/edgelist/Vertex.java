@@ -1,4 +1,4 @@
-package graphs;
+package edgelist;
 
 import java.util.LinkedList;
 

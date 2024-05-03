@@ -1,6 +1,6 @@
-package graphs;
+package edgelist;
 
-import graphs.Graph;
+import edgelist.Graph;
 
 public class Main {
     public static void main(String[] args) {

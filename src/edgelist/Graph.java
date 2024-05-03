@@ -1,9 +1,9 @@
-package graphs;
+package edgelist;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 
-import graphs.Vertex;
+import edgelist.Vertex;
 
 
 class Graph {
