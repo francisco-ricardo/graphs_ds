@@ -9,7 +9,7 @@ run:
 
 # target: push - Push para os repositorios remotos do Git
 push:
-	git push github $(branch)
+	git push origin $(branch)
 
 # target: help - Mostra os targets que sao executaveis
 help:
