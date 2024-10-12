@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  graphs-ds:
+    container_name: graphs-ds
+    image: graphs-ds:latest
+    restart: unless-stopped
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      shm_size: '1gb'   
+    env_file:
+      - .env    
+    volumes:
+      - .:/graphs_ds

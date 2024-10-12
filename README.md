@@ -1,3 +1,19 @@
+
+
+## Tests
+
+mvn test
+
+## Main
+
+mvn clean compile
+mvn exec:java -Dexec.mainClass="Main"
+mvn clean package
+
+
+
+
+
 # Algorithms
 
 This repo contains a list of algorithms...
