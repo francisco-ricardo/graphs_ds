@@ -2,6 +2,7 @@ FROM eclipse-temurin:latest
 
 RUN apt update -y && apt install -y \
     build-essential \
+    maven \
     vim \
     && rm -Rf /var/lib/apt/lists/*
 
