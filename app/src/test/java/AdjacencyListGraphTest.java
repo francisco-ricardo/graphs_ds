@@ -8,10 +8,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GraphTest {
+class AdjacencyListGraphTest {
 
     @Test
-    void testGraphCreation() {
+    void testAdjacencyListGraphCreation() {
         // Setup: creating a list of edges
         List<Edge> edges = new ArrayList<>();
         edges.add(new Edge(0, 1, 6));
