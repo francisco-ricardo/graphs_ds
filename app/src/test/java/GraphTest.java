@@ -1,5 +1,5 @@
 import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.Graph;
+import ds.graphs.adjlist.AdjacencyListGraph;
 import ds.graphs.adjlist.Node;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ class GraphTest {
         edges.add(new Edge(1, 2, 7));
 
         // Action: creating a graph
-        Graph graph = new Graph(edges);
+        AdjacencyListGraph graph = new AdjacencyListGraph(edges);
 
         // Checking: making sure the graph was correctly created
         List<Node> nodesFromZero = graph.getAdjacencyList().get(0);
@@ -38,7 +38,7 @@ class GraphTest {
         );
 
         // Action: creating the graph
-        Graph graph = new Graph(edges);
+        AdjacencyListGraph graph = new AdjacencyListGraph(edges);
 
         // Checking: nodes conectivity
         assertNotNull(graph.getAdjacencyList().get(0), "Node 0 must have adjacent nodes");

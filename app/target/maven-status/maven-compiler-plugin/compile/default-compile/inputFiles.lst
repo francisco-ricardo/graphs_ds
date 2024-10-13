@@ -1,5 +1,5 @@
 /graphs_ds/app/src/main/java/ds/graphs/main/Main.java
-/graphs_ds/app/src/main/java/ds/graphs/adjlist/Graph.java
+/graphs_ds/app/src/main/java/ds/graphs/adjlist/AdjacencyListGraph.java
 /graphs_ds/app/src/main/java/ds/graphs/factory/GraphFactory.java
 /graphs_ds/app/src/main/java/ds/graphs/adjlist/Node.java
 /graphs_ds/app/src/main/java/ds/graphs/adjlist/Edge.java

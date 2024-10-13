@@ -4,17 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.Graph;
+import ds.graphs.adjlist.AdjacencyListGraph;
 
-public class GraphFactory {
+public final class GraphFactory {
 
-    public static Graph createUndirectedGraph(List<Edge> edges) {
+    private GraphFactory() {}
+
+    public static AdjacencyListGraph createUndirectedGraph(List<Edge> edges) {
         List<Edge> undirectedEdges = new ArrayList<>(edges);
         // Duplicate edges in reverse direction for undirected graphs
         for (Edge edge : edges) {
             undirectedEdges.add(new Edge(edge.getDestination(), edge.getSource(), edge.getWeight()));
         }
-        return new Graph(undirectedEdges);
+        return new AdjacencyListGraph(undirectedEdges);
+    }
+
+    public static AdjacencyListGraph createAdjacencyListGraph(List<Edge> edges) {
+        return new AdjacencyListGraph(edges);
     }
 
     // Add more factory methods for different graph types

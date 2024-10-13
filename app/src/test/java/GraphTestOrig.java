@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.Graph;
+import ds.graphs.adjlist.AdjacencyListGraph;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,7 +18,7 @@ class GraphTestOrig {
             new Edge(2, 0, 4)
         );
 
-        Graph graph = new Graph(edges);
+        AdjacencyListGraph graph = new AdjacencyListGraph(edges);
         assertNotNull(graph);
         assertFalse(graph.getAdjacencyList().isEmpty());
     }

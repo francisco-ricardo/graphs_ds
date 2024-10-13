@@ -7,7 +7,9 @@ mvn test
 ## Main
 
 mvn clean compile
-mvn exec:java -Dexec.mainClass="Main"
+mvn compile exec:java -Dexec.mainClass="ds.graphs.main.Main"
+mvn compile exec:java
+
 mvn clean package
 
 
@@ -23,39 +25,39 @@ https://www.geeksforgeeks.org/implementing-generic-graph-in-java/
 
 // Java program to implement Graph
 // with the help of Generics
- 
+
 import java.util.*;
- 
+
 class Graph<T> {
- 
+
     // We use Hashmap to store the edges in the graph
     private Map<T, List<T> > map = new HashMap<>();
- 
+
     // This function adds a new vertex to the graph
     public void addVertex(T s)
     {
         map.put(s, new LinkedList<T>());
     }
- 
+
     // This function adds the edge
     // between source to destination
     public void addEdge(T source,
                         T destination,
                         boolean bidirectional)
     {
- 
+
         if (!map.containsKey(source))
             addVertex(source);
- 
+
         if (!map.containsKey(destination))
             addVertex(destination);
- 
+
         map.get(source).add(destination);
         if (bidirectional == true) {
             map.get(destination).add(source);
         }
     }
- 
+
     // This function gives the count of vertices
     public void getVertexCount()
     {
@@ -63,7 +65,7 @@ class Graph<T> {
                            + map.keySet().size()
                            + " vertex");
     }
- 
+
     // This function gives the count of edges
     public void getEdgesCount(boolean bidirection)
     {
@@ -78,7 +80,7 @@ class Graph<T> {
                            + count
                            + " edges.");
     }
- 
+
     // This function gives whether
     // a vertex is present or not.
     public void hasVertex(T s)
@@ -92,7 +94,7 @@ class Graph<T> {
                                + s + " as a vertex.");
         }
     }
- 
+
     // This function gives whether an edge is present or not.
     public void hasEdge(T s, T d)
     {
@@ -105,13 +107,13 @@ class Graph<T> {
                                + s + " and " + d + ".");
         }
     }
- 
+
     // Prints the adjancency list of each vertex.
     @Override
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
- 
+
         for (T v : map.keySet()) {
             builder.append(v.toString() + ": ");
             for (T w : map.get(v)) {
@@ -119,20 +121,20 @@ class Graph<T> {
             }
             builder.append("\n");
         }
- 
+
         return (builder.toString());
     }
 }
- 
+
 // Driver Code
 public class Main {
- 
+
     public static void main(String args[])
     {
- 
+
         // Object of graph is created.
         Graph<Integer> g = new Graph<Integer>();
- 
+
         // edges are added.
         // Since the graph is bidirectional,
         // so boolean bidirectional is passed as true.
@@ -143,20 +145,20 @@ public class Main {
         g.addEdge(1, 4, true);
         g.addEdge(2, 3, true);
         g.addEdge(3, 4, true);
- 
+
         // Printing the graph
         System.out.println("Graph:\n"
                            + g.toString());
- 
+
         // Gives the no of vertices in the graph.
         g.getVertexCount();
- 
+
         // Gives the no of edges in the graph.
         g.getEdgesCount(true);
- 
+
         // Tells whether the edge is present or not.
         g.hasEdge(3, 4);
- 
+
         // Tells whether vertex is present or not
         g.hasVertex(5);
     }

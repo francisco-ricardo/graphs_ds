@@ -1,12 +1,16 @@
 package ds.graphs.adjlist;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Graph {
+
+public class AdjacencyListGraph {
 
     private final Map<Integer, List<Node>> adjacencyList = new HashMap<>();
 
-    public Graph(final List<Edge> edges) {
+    public AdjacencyListGraph(final List<Edge> edges) {
         for (Edge edge : edges) {
             adjacencyList
                 .computeIfAbsent(edge.getSource(), x -> new ArrayList<>())
