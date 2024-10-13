@@ -7,12 +7,12 @@ class EdgeTest {
 
     @Test
     void testEdgeCreation() {
-        // Setup: Criando uma aresta
+        // Setup: Creating an edge
         Edge edge = new Edge(0, 1, 5);
 
-        // Verificação: Checando se os valores estão corretos
-        assertEquals(0, edge.getSource(), "A origem da aresta deve ser 0");
-        assertEquals(1, edge.getDestination(), "O destino da aresta deve ser 1");
-        assertEquals(5, edge.getWeight(), "O peso da aresta deve ser 5");
+        // Checking the values
+        assertEquals(0, edge.getSource(), "The origin of the edge must be 0");
+        assertEquals(1, edge.getDestination(), "The edge destination must be 1");
+        assertEquals(5, edge.getWeight(), "The edge weight should be 5");
     }
 }

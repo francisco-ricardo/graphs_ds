@@ -12,22 +12,22 @@ class GraphTest {
 
     @Test
     void testGraphCreation() {
-        // Setup: criando uma lista de arestas
+        // Setup: creating a list of edges
         List<Edge> edges = new ArrayList<>();
         edges.add(new Edge(0, 1, 6));
         edges.add(new Edge(1, 2, 7));
 
-        // Ação: criando o grafo
+        // Action: creating a graph
         Graph graph = new Graph(edges);
 
-        // Verificação: garantindo que o grafo foi criado corretamente
+        // Checking: making sure the graph was correctly created
         List<Node> nodesFromZero = graph.getAdjacencyList().get(0);
-        assertNotNull(nodesFromZero, "Lista de adjacência para o vértice 0 deve existir");
-        assertEquals(1, nodesFromZero.size(), "Vértice 0 deve ter 1 nó adjacente");
-        assertEquals(1, nodesFromZero.get(0).getValue(), "O valor do nó adjacente deve ser 1");
-        assertEquals(6, nodesFromZero.get(0).getWeight(), "O peso da aresta deve ser 6");
+        assertNotNull(nodesFromZero, "Adjacency list for vertex 0 must exist");
+        assertEquals(1, nodesFromZero.size(), "Vertex 0 must have 1 adjacent node");
+        assertEquals(1, nodesFromZero.get(0).getValue(), "The value of the adjacent node must be 1");
+        assertEquals(6, nodesFromZero.get(0).getWeight(), "The edge weight should be 6");
     }
-    
+
     @Test
     void testGraphEdgeConnection() {
         // Setup
@@ -37,11 +37,11 @@ class GraphTest {
                 new Edge(2, 3, 30)
         );
 
-        // Ação: criando o grafo
+        // Action: creating the graph
         Graph graph = new Graph(edges);
 
-        // Verificação: conectividade dos nós
-        assertNotNull(graph.getAdjacencyList().get(0), "O nó 0 deve ter nós adjacentes");
+        // Checking: nodes conectivity
+        assertNotNull(graph.getAdjacencyList().get(0), "Node 0 must have adjacent nodes");
         assertEquals(1, graph.getAdjacencyList().get(0).get(0).getValue());
         assertEquals(10, graph.getAdjacencyList().get(0).get(0).getWeight());
     }

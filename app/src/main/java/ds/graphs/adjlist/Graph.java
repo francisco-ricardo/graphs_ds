@@ -14,6 +14,10 @@ public class Graph {
         }
     }
 
+    public Map<Integer, List<Node>> getAdjacencyList() {
+        return this.adjacencyList;
+    }
+
     public void printGraph() {
         adjacencyList.forEach((key, nodes) -> {
             System.out.print("Vertex " + key + ":");

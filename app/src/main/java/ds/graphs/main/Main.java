@@ -1,11 +1,15 @@
-import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.Graph;
+package ds.graphs.main;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ds.graphs.adjlist.Edge;
+import ds.graphs.adjlist.Graph;
+
 public class Main {
     public static void main(String[] args) {
+
+        // Adjacency List >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         List<Edge> edges = new ArrayList<>();
         edges.add(new Edge(0, 1, 6));
         edges.add(new Edge(1, 2, 7));
@@ -15,7 +19,9 @@ public class Main {
         edges.add(new Edge(4, 5, 1));
         edges.add(new Edge(5, 4, 3));
 
-        Graph graph = new Graph(edges);
-        graph.printGraph();
+        Graph adjListgraph = new Graph(edges);
+        adjListgraph.printGraph();
+        // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
     }
 }
