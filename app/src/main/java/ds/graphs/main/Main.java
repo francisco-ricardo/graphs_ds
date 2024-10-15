@@ -5,6 +5,7 @@ import java.util.List;
 
 import ds.graphs.adjlist.Edge;
 import ds.graphs.adjlist.AdjacencyListGraph;
+import ds.graphs.adjmatrix.AdjacencyMatrixGraph;
 import ds.graphs.factory.GraphFactory;
 
 public class Main {
@@ -29,6 +30,25 @@ public class Main {
 
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
+
+        System.out.println("Adjacency Matrix Graph >>>>>>>>>>");
+
+        final int numVertices = 5;
+        AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(numVertices);
+
+        // Add edges between vertices
+        adjMatrixGraph.addEdge(0, 1);
+        adjMatrixGraph.addEdge(0, 4);
+        adjMatrixGraph.addEdge(1, 2);
+        adjMatrixGraph.addEdge(1, 3);
+        adjMatrixGraph.addEdge(1, 4);
+        adjMatrixGraph.addEdge(2, 3);
+        adjMatrixGraph.addEdge(3, 4);
+
+        // Print the adjacency matrix
+        adjMatrixGraph.printGraph();
+
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
 
     }

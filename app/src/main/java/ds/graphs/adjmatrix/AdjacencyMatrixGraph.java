@@ -25,7 +25,7 @@ public class AdjacencyMatrixGraph {
             return;
         }
         this.adjacencyMatrix[source][destination] = 1;
-        this.adjacencyMatrix[destination][source] = 1; // For undirected graphs
+        //this.adjacencyMatrix[destination][source] = 1; // For undirected graphs
     }
 
     // Method to remove an edge between two vertices
