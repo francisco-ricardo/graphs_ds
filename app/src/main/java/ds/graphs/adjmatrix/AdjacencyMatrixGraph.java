@@ -1,5 +1,7 @@
 package ds.graphs.adjmatrix;
 
+import ds.graphs.adjlist.Edge;
+
 public class AdjacencyMatrixGraph {
 
     private final int numVertices;
@@ -26,6 +28,15 @@ public class AdjacencyMatrixGraph {
         }
         this.adjacencyMatrix[source][destination] = 1;
         //this.adjacencyMatrix[destination][source] = 1; // For undirected graphs
+    }
+
+
+    public void addEdgeNew(final Edge edge) {
+        if (edge.getSource() >= this.numVertices || edge.getDestination() >= this.numVertices) {
+            System.out.println("Error: Invalid vertex.");
+            return;
+        }
+        this.adjacencyMatrix[edge.getSource()][edge.getDestination()] = edge.getWeight();
     }
 
     // Method to remove an edge between two vertices
