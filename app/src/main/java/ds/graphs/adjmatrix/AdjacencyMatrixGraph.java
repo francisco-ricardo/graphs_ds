@@ -1,6 +1,7 @@
 package ds.graphs.adjmatrix;
 
 import ds.graphs.adjlist.Edge;
+import java.util.List;
 
 public class AdjacencyMatrixGraph {
 
@@ -18,6 +19,23 @@ public class AdjacencyMatrixGraph {
                 this.adjacencyMatrix[i][j] = 0;
             }
         }
+    }
+
+
+    public AdjacencyMatrixGraph(final List<Edge> edges) {
+        this.numVertices = edges.size();
+        this.adjacencyMatrix = new int[numVertices][numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = 0; j < numVertices; j++) {
+                this.adjacencyMatrix[i][j] = 0;
+            }
+        }
+
+        for (Edge edge: edges) {
+            this.adjacencyMatrix[edge.getSource()][edge.getDestination()] = edge.getWeight();
+        }
+
     }
 
     // Method to add an edge between two vertices

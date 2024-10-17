@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("Adjacency Matrix Graph >>>>>>>>>>");
 
-        final int numVertices = 5;
+        final int numVertices = 7;
         AdjacencyMatrixGraph adjMatrixGraph = new AdjacencyMatrixGraph(numVertices);
 
         // Add edges between vertices
@@ -49,6 +49,26 @@ public class Main {
         adjMatrixGraph.printGraph();
 
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
+
+        System.out.println("Adjacency Matrix Graph 2 >>>>>>>>>>");
+
+        // Add edges between vertices
+        final List<Edge> adjMatrixedges = new ArrayList<>();
+        adjMatrixedges.add(new Edge(0, 1, 18));
+        adjMatrixedges.add(new Edge(0, 4, 11));
+        adjMatrixedges.add(new Edge(1, 2, 18));
+        adjMatrixedges.add(new Edge(1, 3, 9));
+        adjMatrixedges.add(new Edge(1, 4, 14));
+        adjMatrixedges.add(new Edge(2, 3, 9));
+        adjMatrixedges.add(new Edge(3, 4, 25));
+
+        AdjacencyMatrixGraph adjMatrixGraph2 = new AdjacencyMatrixGraph(adjMatrixedges);
+        // Print the adjacency matrix
+        adjMatrixGraph2.printGraph();
+
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
 
 
     }

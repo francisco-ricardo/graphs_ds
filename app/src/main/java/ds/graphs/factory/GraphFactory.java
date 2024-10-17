@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ds.graphs.adjlist.Edge;
+import ds.graphs.adjmatrix.AdjacencyMatrixGraph;
 import ds.graphs.adjlist.AdjacencyListGraph;
 
 public final class GraphFactory {
@@ -19,8 +20,14 @@ public final class GraphFactory {
         return new AdjacencyListGraph(undirectedEdges);
     }
 
+
+
     public static AdjacencyListGraph createAdjacencyListGraph(List<Edge> edges) {
         return new AdjacencyListGraph(edges);
+    }
+
+    public static AdjacencyMatrixGraph createAdjacencyMatrixGraph(List<Edge> edges) {
+        return new AdjacencyMatrixGraph(edges);
     }
 
     // Add more factory methods for different graph types
