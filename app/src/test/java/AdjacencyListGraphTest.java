@@ -1,6 +1,7 @@
-import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.AdjacencyListGraph;
-import ds.graphs.adjlist.Node;
+import ds.graphs.AdjacencyListGraph;
+import ds.graphs.Edge;
+import ds.graphs.Node;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

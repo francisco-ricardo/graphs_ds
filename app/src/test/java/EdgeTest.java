@@ -1,5 +1,6 @@
-import ds.graphs.adjlist.Edge;
 import org.junit.jupiter.api.Test;
+
+import ds.graphs.Edge;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

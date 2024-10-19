@@ -1,4 +1,4 @@
-package ds.graphs.adjlist;
+package ds.graphs;
 
 public final class Edge {
     private final int source;

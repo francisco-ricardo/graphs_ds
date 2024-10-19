@@ -1,6 +1,6 @@
-/graphs_ds/app/src/main/java/ds/graphs/main/Main.java
-/graphs_ds/app/src/main/java/ds/graphs/adjlist/AdjacencyListGraph.java
-/graphs_ds/app/src/main/java/ds/graphs/factory/GraphFactory.java
-/graphs_ds/app/src/main/java/ds/graphs/adjmatrix/AdjacencyMatrixGraph.java
-/graphs_ds/app/src/main/java/ds/graphs/adjlist/Node.java
-/graphs_ds/app/src/main/java/ds/graphs/adjlist/Edge.java
+/graphs_ds/app/src/main/java/ds/graphs/AdjacencyListGraph.java
+/graphs_ds/app/src/main/java/ds/graphs/Node.java
+/graphs_ds/app/src/main/java/ds/graphs/Edge.java
+/graphs_ds/app/src/main/java/ds/graphs/GraphFactory.java
+/graphs_ds/app/src/main/java/ds/graphs/Main.java
+/graphs_ds/app/src/main/java/ds/graphs/AdjacencyMatrixGraph.java

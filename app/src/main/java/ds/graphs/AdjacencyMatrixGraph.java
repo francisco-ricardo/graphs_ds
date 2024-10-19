@@ -1,6 +1,5 @@
-package ds.graphs.adjmatrix;
+package ds.graphs;
 
-import ds.graphs.adjlist.Edge;
 import java.util.List;
 
 public class AdjacencyMatrixGraph {
@@ -52,11 +51,6 @@ public class AdjacencyMatrixGraph {
             }
             System.out.println();
         }
-    }
-
-
-    public int getNumVertices() {
-        return this.numVertices;
     }
 
 }

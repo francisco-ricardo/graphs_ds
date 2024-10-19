@@ -1,6 +1,6 @@
-ds/graphs/adjlist/AdjacencyListGraph.class
-ds/graphs/main/Main.class
-ds/graphs/factory/GraphFactory.class
-ds/graphs/adjmatrix/AdjacencyMatrixGraph.class
-ds/graphs/adjlist/Edge.class
-ds/graphs/adjlist/Node.class
+ds/graphs/GraphFactory.class
+ds/graphs/Edge.class
+ds/graphs/AdjacencyMatrixGraph.class
+ds/graphs/AdjacencyListGraph.class
+ds/graphs/Node.class
+ds/graphs/Main.class

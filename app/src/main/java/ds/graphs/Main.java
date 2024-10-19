@@ -1,12 +1,7 @@
-package ds.graphs.main;
+package ds.graphs;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ds.graphs.adjlist.Edge;
-import ds.graphs.adjlist.AdjacencyListGraph;
-import ds.graphs.adjmatrix.AdjacencyMatrixGraph;
-import ds.graphs.factory.GraphFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,17 +18,15 @@ public class Main {
         edges.add(new Edge(3, 1, 14));
         edges.add(new Edge(3, 2, 25));
 
-
-        System.out.println("Adjacency List Graph >>>>>>>>>>");
+        System.out.println("1. Adjacency List Graph:");
         final AdjacencyListGraph adjListGraph = GraphFactory.createAdjacencyListGraph(edges);
         adjListGraph.printGraph();
-        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("----------\n");
 
-
-        System.out.println("Adjacency Matrix Graph  >>>>>>>>>>");
+        System.out.println("2. Adjacency Matrix Graph:");
         final AdjacencyMatrixGraph adjMatrixGraph = GraphFactory.createAdjacencyMatrixGraph(edges);
         adjMatrixGraph.printGraph();
-        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("---------\n");
 
     }
 }

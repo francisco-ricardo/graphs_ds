@@ -1,5 +1,6 @@
-import ds.graphs.adjlist.Node;
 import org.junit.jupiter.api.Test;
+
+import ds.graphs.Node;
 
 import static org.junit.jupiter.api.Assertions.*;
 

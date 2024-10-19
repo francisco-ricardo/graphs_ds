@@ -1,10 +1,6 @@
-package ds.graphs.factory;
+package ds.graphs;
 
 import java.util.List;
-
-import ds.graphs.adjlist.Edge;
-import ds.graphs.adjmatrix.AdjacencyMatrixGraph;
-import ds.graphs.adjlist.AdjacencyListGraph;
 
 public final class GraphFactory {
 
