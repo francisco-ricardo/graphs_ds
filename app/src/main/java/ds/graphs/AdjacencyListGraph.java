@@ -9,6 +9,7 @@ import java.util.Map;
 /**
  * Class representing a graph using an adjacency list. 
  * This structure is useful for sparse graphs.
+ * Each vertex in the graph has a list of adjacent nodes with their respective weights.
  */
 public class AdjacencyListGraph implements Graph {
 
@@ -26,7 +27,11 @@ public class AdjacencyListGraph implements Graph {
         addEdges(edges);
     }
 
-
+    /**
+     * Adds edges to the adjacency list graph.
+     *
+     * @param edges the list of edges to be added
+     */
     @Override
     public void addEdges(List<Edge> edges) {
         for (Edge edge : edges) {
@@ -37,16 +42,24 @@ public class AdjacencyListGraph implements Graph {
     }
 
 
+     /**
+     * Prints the adjacency list representation of the graph.
+     */
     @Override
     public void printGraph() {
         adjacencyList.forEach((key, nodes) -> {
             System.out.print("Vertex " + key + ":");
-            nodes.forEach(node -> System.out.print(" -> " + node.getValue() + " (Weight: " + node.getWeight() + ")"));
+            nodes.forEach(node -> System.out.print(" -> " + node.getNext() + " (Weight: " + node.getWeight() + ")"));
             System.out.println();
         });
     }
+    
 
-
+    /**
+     * Retrieves the adjacency list of the graph.
+     *
+     * @return the adjacency list as a map of vertices to lists of adjacent nodes
+     */
     public Map<Integer, List<Node>> getAdjacencyList() {
         return this.adjacencyList;
     }

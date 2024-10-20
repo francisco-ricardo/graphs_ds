@@ -7,6 +7,7 @@ import java.util.Arrays;
 /**
  * Class representing a graph using an adjacency matrix. 
  * This structure is useful for dense graphs.
+ * The matrix stores the weights of the edges between vertices.
  */
 public class AdjacencyMatrixGraph implements Graph {
 
@@ -32,9 +33,11 @@ public class AdjacencyMatrixGraph implements Graph {
     }
 
 
-    
-
-
+    /**
+     * Adds edges to the adjacency matrix graph.
+     *
+     * @param edges the list of edges to be added
+     */
     @Override
     public void addEdges(List<Edge> edges) {
         for (Edge edge: edges) {
@@ -47,6 +50,9 @@ public class AdjacencyMatrixGraph implements Graph {
     }
 
 
+    /**
+     * Prints the adjacency matrix representation of the graph.
+     */
     @Override
     public void printGraph() {
         for (int i = 0; i < this.numNodes; i++) {

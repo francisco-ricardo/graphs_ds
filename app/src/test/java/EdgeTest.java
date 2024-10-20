@@ -4,8 +4,17 @@ import ds.graphs.Edge;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+/**
+ * Unit tests for the Edge class.
+ */
 class EdgeTest {
 
+
+    /**
+     * Tests the creation of an edge.
+     * Verifies that the source, destination, and weight are correctly set.
+     */    
     @Test
     void testEdgeCreation() {
         // Setup: Creating an edge

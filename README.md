@@ -1,4 +1,131 @@
+# Graph Data Structures (graphs-ds)
 
+Welcome to the **graphs-ds** repository! This project is part of my portfolio and showcases my ability to create fundamental graph data structures in Java. It is designed with a focus on the structure itself, without implementing traversal algorithms like DFS or BFS, which could be added in future repositories.
+
+## Overview
+
+This project contains implementations of different types of graphs, such as:
+
+- **Adjacency List Graph**
+- **Adjacency Matrix Graph**
+
+It provides basic data structures for representing graphs but does not implement graph traversal algorithms. If you're interested in a deeper discussion on graphs, check out my post: [Graphs - Overview](https://github.com/francisco-ricardo/graphs_post).
+
+## Features
+
+- **Graph representations**: Adjacency List and Adjacency Matrix.
+- **Edge and Node abstraction**: Simplified representation of graph edges and nodes.
+- **Factory pattern**: For easy creation of different graph types.
+- **Test coverage**: Unit tests for validating the graph structure using **JUnit 5**.
+
+## Project Structure
+
+The project is structured as a standard Maven project:
+
+```bash
+graphs-ds/ 
+├── src/ 
+    │ └── main/ 
+        │ └── java/ 
+            │ └── ds/graphs/ # Contains the graph implementation classes 
+    │ └── test/ 
+        │ └── java/ # Contains unit tests
+└── Dockerfile # Docker setup to run the project 
+└── docker-compose.yml # Docker Compose configuration
+```
+
+## Getting Started
+
+### Prerequisites
+
+To run this project locally, you will need:
+
+- **Java 17** or later
+- **Maven**
+- **Docker**
+
+### Running the Project
+
+You can run the project locally using Docker. First, make sure you have Docker and Docker Compose installed.
+
+1. Clone the repository:
+```bash
+git clone https://github.com/francisco-ricardo/graphs-ds.git
+cd graphs-ds
+```
+
+2. Build and run the Docker container:
+```bash
+docker-compose up
+```
+
+3. Once the container is up, you can explore the graph structures and run the tests.
+
+## Running Tests
+
+This project uses JUnit 5 to run the tests. You can run the tests inside the Docker container or locally with Maven:
+
+- To run tests locally:
+
+```bash
+mvn test
+```
+
+- To run tests in Docker:
+
+```bash
+docker-compose exec graphs_ds mvn test
+
+```
+
+## Example Usage
+
+Here is a basic example of how to create and use the graph data structures:
+
+```java
+List<Edge> edges = new ArrayList<>();
+edges.add(new Edge(0, 1, 18));
+edges.add(new Edge(0, 3, 11));
+// More edges...
+
+AdjacencyListGraph listGraph = GraphFactory.createAdjacencyListGraph(edges);
+listGraph.printGraph(); // Prints the adjacency list representation
+
+AdjacencyMatrixGraph matrixGraph = GraphFactory.createAdjacencyMatrixGraph(edges);
+matrixGraph.printGraph(); // Prints the adjacency matrix representation
+```
+
+## Testing Framework
+
+The repository includes unit tests for the graph structures, implemented using JUnit 5. The tests validate the correct creation of graphs, edge connections, and node values.
+
+For example, the *AdjacencyListGraphTest* verifies the graph creation and edge connections:
+
+```java
+@Test
+void testAdjacencyListGraphCreation() {
+    // Setup
+    List<Edge> edges = new ArrayList<>();
+    edges.add(new Edge(0, 1, 6));
+
+    // Action
+    AdjacencyListGraph graph = new AdjacencyListGraph(edges);
+
+    // Assert
+    List<Node> nodes = graph.getAdjacencyList().get(0);
+    assertNotNull(nodes);
+    assertEquals(1, nodes.get(0).getNext());
+    assertEquals(6, nodes.get(0).getWeight());
+}
+```
+
+## Contributing
+
+This repository is open-source and licensed under the MIT license. Feel free to clone, fork, or modify the project as needed. Contributions and suggestions are welcome!
+
+## Limitations
+
+This repository focuses on graph data structures and does not include traversal or search algorithms like BFS, DFS, Dijkstra, etc. These algorithms could be implemented in a future project, expanding upon the structures created here.
 
 ## Tests
 

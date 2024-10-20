@@ -2,35 +2,47 @@ package ds.graphs;
 
 
 /**
- * Class representing a node in a graph. 
- * A node has a value and an associated weight.
+ * Represents a node in the graph, typically used for adjacency lists.
+ * Each node has a reference to the next node (destination) and a weight associated with the edge.
  */
 public final class Node {
-    private final int value;
+    private final int next;   // Refers to the next node in the graph (destination)
     private final int weight;
 
-    
+
      /**
-     * Constructs a Node with the given value and weight.
+     * Constructs a node with a reference to the next node and the edge's weight.
      *
-     * @param value  the value of the node
-     * @param weight the weight associated with the node
+     * @param next the destination node this node points to
+     * @param weight the weight of the edge connecting the nodes
      */
-    public Node(final int value, final int weight) {
-        this.value = value;
+    public Node(final int next, final int weight) {
+        this.next = next;
         this.weight = weight;
     }
 
-    public int getValue() {
-        return value;
+
+    /**
+     * Retrieves the destination node this node points to.
+     *
+     * @return the destination node (next)
+     */
+    public int getNext() {
+        return this.next;
     }
 
+
+    /**
+     * Retrieves the weight of the edge connecting this node to the next node.
+     *
+     * @return the weight of the edge
+     */
     public int getWeight() {
-        return weight;
+        return this.weight;
     }
 
     @Override
     public String toString() {
-        return String.format("Node(value=%d, weight=%d)", value, weight);
+        return String.format("Node(next=%d, weight=%d)", this.next, this.weight);
     }
 }
