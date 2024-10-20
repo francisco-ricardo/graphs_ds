@@ -25,11 +25,11 @@ The project is structured as a standard Maven project:
 ```bash
 graphs-ds/ 
 ├── src/ 
-    │ └── main/ 
-        │ └── java/ 
-            │ └── ds/graphs/ # Contains the graph implementation classes 
-    │ └── test/ 
-        │ └── java/ # Contains unit tests
+|    │ └── main/ 
+|    |    │ └── java/ 
+|    |    |    │ └── ds/graphs/ # Contains the graph implementation classes 
+|    │ └── test/ 
+|    |    │ └── java/ # Contains unit tests
 └── Dockerfile # Docker setup to run the project 
 └── docker-compose.yml # Docker Compose configuration
 ```
