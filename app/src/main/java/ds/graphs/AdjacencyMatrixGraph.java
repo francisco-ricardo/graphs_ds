@@ -2,11 +2,12 @@ package ds.graphs;
 
 import java.util.List;
 import java.util.Set;
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class AdjacencyMatrixGraph implements Graph {
 
-    private final int numVertices;
+    private final int numNodes;
     private final int[][] adjacencyMatrix;
 
 
@@ -14,15 +15,21 @@ public class AdjacencyMatrixGraph implements Graph {
 
         Set<Integer> sourceSet = new HashSet<>();
         edges.forEach(e -> sourceSet.add(e.getSource()));
-        this.numVertices = sourceSet.size();
+        this.numNodes = sourceSet.size();
 
-        this.adjacencyMatrix = new int[numVertices][numVertices];
+        this.adjacencyMatrix = new int[numNodes][numNodes];
 
-        for (int i = 0; i < numVertices; i++) {
-            for (int j = 0; j < numVertices; j++) {
-                this.adjacencyMatrix[i][j] = 0;
-            }
+        //for (int i = 0; i < numVertices; i++) {
+            //for (int j = 0; j < numVertices; j++) {
+                //this.adjacencyMatrix[i][j] = 0;
+            //}
+        //}
+
+        for (int i = 0; i < this.numNodes; i++) {
+            Arrays.fill(this.adjacencyMatrix[i], 0);
         }
+
+
 
         addEdges(edges);
     }
@@ -31,7 +38,7 @@ public class AdjacencyMatrixGraph implements Graph {
     @Override
     public void addEdges(List<Edge> edges) {
         for (Edge edge: edges) {
-            if (edge.getSource() >= this.numVertices || edge.getDestination() >= this.numVertices) {
+            if (edge.getSource() >= this.numNodes || edge.getDestination() >= this.numNodes) {
                 throw new ArrayIndexOutOfBoundsException("Index out of bounds!");
             }
 
@@ -42,8 +49,8 @@ public class AdjacencyMatrixGraph implements Graph {
 
     @Override
     public void printGraph() {
-        for (int i = 0; i < this.numVertices; i++) {
-            for (int j = 0; j < this.numVertices; j++) {
+        for (int i = 0; i < this.numNodes; i++) {
+            for (int j = 0; j < this.numNodes; j++) {
                 System.out.print(this.adjacencyMatrix[i][j] + " ");
             }
             System.out.println();
