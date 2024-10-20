@@ -1,6 +1,8 @@
 package ds.graphs;
 
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 public class AdjacencyMatrixGraph implements Graph {
 
@@ -9,7 +11,11 @@ public class AdjacencyMatrixGraph implements Graph {
 
 
     public AdjacencyMatrixGraph(final List<Edge> edges) {
-        this.numVertices = edges.size();
+
+        Set<Integer> sourceSet = new HashSet<>();
+        edges.forEach(e -> sourceSet.add(e.getSource()));
+        this.numVertices = sourceSet.size();
+
         this.adjacencyMatrix = new int[numVertices][numVertices];
 
         for (int i = 0; i < numVertices; i++) {

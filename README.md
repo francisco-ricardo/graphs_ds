@@ -12,6 +12,8 @@ mvn compile exec:java
 
 mvn clean package
 
+jshell --class-path /graphs_ds/app/target/classes
+
 
 
 
