@@ -6,12 +6,21 @@ import java.util.List;
 import java.util.Map;
 
 
+/**
+ * Class representing a graph using an adjacency list. 
+ * This structure is useful for sparse graphs.
+ */
 public class AdjacencyListGraph implements Graph {
 
 
     private final Map<Integer, List<Node>> adjacencyList;
 
 
+    /**
+     * Constructs a graph from a list of edges.
+     *
+     * @param edges the list of edges to construct the graph
+     */
     public AdjacencyListGraph(final List<Edge> edges) {
         this.adjacencyList = new HashMap<>();
         addEdges(edges);
