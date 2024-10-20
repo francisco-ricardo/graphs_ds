@@ -177,11 +177,13 @@ void testAdjacencyListGraphCreation() {
 
 ## Contributing
 
-This repository is open-source and licensed under the MIT license. Feel free to clone, fork, or modify the project as needed. Contributions and suggestions are welcome!
+This repository is open-source and licensed under the MIT license. Feel free to clone, fork, or modify the project as needed.
 
-## Limitations
+## Future Plans
 
-This repository focuses on graph data structures and does not include traversal or search algorithms like BFS, DFS, Dijkstra, etc. These algorithms could be implemented in a future project, expanding upon the structures created here.
+This repository focuses exclusively on graph data structures. Algorithms for graph traversal and search (like BFS, DFS) or shortest path finding (Dijkstra's, A*) are not covered here. These might be explored in future repositories.
+
+Feel free to reach out for feedback or suggestions!
 
 
 
