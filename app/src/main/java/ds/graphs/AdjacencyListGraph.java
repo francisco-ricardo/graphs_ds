@@ -6,22 +6,29 @@ import java.util.List;
 import java.util.Map;
 
 
-public class AdjacencyListGraph {
+public class AdjacencyListGraph implements Graph {
 
-    private final Map<Integer, List<Node>> adjacencyList = new HashMap<>();
+
+    private final Map<Integer, List<Node>> adjacencyList;
+
 
     public AdjacencyListGraph(final List<Edge> edges) {
+        this.adjacencyList = new HashMap<>();
+        addEdges(edges);
+    }
+
+
+    @Override
+    public void addEdges(List<Edge> edges) {
         for (Edge edge : edges) {
-            adjacencyList
+            this.adjacencyList
                 .computeIfAbsent(edge.getSource(), x -> new ArrayList<>())
                 .add(new Node(edge.getDestination(), edge.getWeight()));
         }
     }
 
-    public Map<Integer, List<Node>> getAdjacencyList() {
-        return this.adjacencyList;
-    }
 
+    @Override
     public void printGraph() {
         adjacencyList.forEach((key, nodes) -> {
             System.out.print("Vertex " + key + ":");
@@ -29,4 +36,11 @@ public class AdjacencyListGraph {
             System.out.println();
         });
     }
+
+
+    public Map<Integer, List<Node>> getAdjacencyList() {
+        return this.adjacencyList;
+    }
+
+
 }

@@ -1,6 +1,7 @@
 ds/graphs/GraphFactory.class
 ds/graphs/Edge.class
 ds/graphs/AdjacencyMatrixGraph.class
-ds/graphs/AdjacencyListGraph.class
 ds/graphs/Node.class
 ds/graphs/Main.class
+ds/graphs/Graph.class
+ds/graphs/AdjacencyListGraph.class
