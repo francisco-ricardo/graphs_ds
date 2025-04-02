@@ -1,17 +1,22 @@
 # Graph Data Structures (graphs-ds)
 
-This repository is part of my portfolio as a **Software Engineer**. It showcases the implementation of graph data structures, focusing exclusively on the creation of graph structures rather than exploring traversal or search algorithms. The project is fully **open-source** and is intended to be a foundational library for building and understanding graph-based applications.
+This repository is part of my portfolio as a **Software Engineer**. It showcases the implementation of graph data structures, focusing on the creation of graph structures such as **Adjacency List** and **Adjacency Matrix**. The project is fully **open-source** and serves as a foundational library for building and understanding graph-based applications.
 
 For an overview of Graph theory and its concepts, please refer to my post: [Graphs - Overview](https://github.com/francisco-ricardo/graphs_post).
 
-## Features
+---
 
-- **Graph representations**: Adjacency List and Adjacency Matrix.
-- **Edge and Node abstraction**: Simplified representation of graph edges and nodes.
-- **Factory pattern**: For easy creation of different graph types.
-- **Test coverage**: Unit tests for validating the graph structure using **JUnit 5**.
+## ✨ Features
 
-## Project Structure
+- **Graph Representations**: Adjacency List and Adjacency Matrix.
+- **Edge and Node Abstraction**: Simplified representation of graph edges and nodes.
+- **Factory Pattern**: For easy creation of different graph types.
+- **Test Coverage**: Unit tests for validating the graph structure using **JUnit 5**.
+- **Dockerized Environment**: Easily run the project in a containerized setup.
+
+---
+
+## 📂 Project Structure
 
 The project is structured as a standard Maven project:
 
@@ -27,103 +32,83 @@ graphs-ds/
 └── docker-compose.yml # Docker Compose configuration
 ```
 
-## Getting Started
+---
 
-To get started, clone the repository:
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Java**: Version 11 or higher.
+- **Maven**: Version 3.6 or higher.
+- **Docker** (optional): For containerized execution.
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/graphs-ds.git
 cd graphs-ds
 ```
 
-You can run this project in two ways:
+### Run the Project
 
-### Option 1: Using Docker
+#### Option 1: Using Docker
 
-The project is configured to run inside a container with the following configuration:
-
-- *Dockerfile*: Defines the environment using eclipse-temurin with all necessary tools.
-
-- *compose.yaml*: Handles the container management for easy start/stop.
-
-The container is configured to continuously run the docker-cmd-script.sh script.
-
-To run the project using Docker, ensure you have Docker and Docker Compose installed on your machine and follow these steps:
-
-1. Navigate to the project directory.
-
-2. Run the following command to start the Docker container:
+1. Start the Docker container:
 
 ```bash
 make run
 ```
 
-Once the container is up, you can explore the graph structures and run the tests.
-
-3. Navigate to the app directory in the container:
+2. Access the container:
 
 ```bash
 docker exec -it graph-ds bash
 cd /graphs_ds/app
 ```
 
-4. Build the project using Maven:
+3. Build and run the project:
 
 ```bash
 mvn clean install
-```
-
-5. Run the project:
-
-```bash
 mvn exec:java
 ```
 
-### Option 2: Directly on Your Operating System
+#### Option 2: Run Locally
 
-If you prefer to run the project directly on your operating system, ensure you have the following dependencies installed:
-
-- Java (version 11 or higher)
-- Maven (version 3.6 or higher)
-
-Once you have the dependencies installed, follow these steps:
-
-1. Navigate to the app directory:
+1. Navigate to the project directory:
 
 ```bash
 cd graphs_ds/app
 ```
 
-2. Build the project using Maven:
+2. Build and run the project:
 
 ```bash
 mvn clean install
-```
-
-3. Run the project:
-
-```bash
 mvn exec:java
 ```
 
-## Running Tests
+---
 
-This project uses JUnit 5 to run the tests. You can run the tests inside the Docker container or locally with Maven:
+## ✅ Running Tests
 
-- To run tests locally:
+This project uses **JUnit 5** for testing. You can run the tests locally or inside the Docker container.
+
+- **Locally**:
 
 ```bash
 mvn test
 ```
 
-- To run tests in Docker:
+- **In Docker**:
 
 ```bash
 docker-compose exec graphs_ds mvn test
-
 ```
 
-## Example Usage
+---
+
+## 💡Example Usage
 
 Here is a basic example of how to create and use the graph data structures:
 
@@ -151,39 +136,85 @@ Vertex 0: -> 1 (Weight: 18) -> 3 (Weight: 11)
 0 0 0 0
 ```
 
-## Testing Framework
+---
 
-The repository includes unit tests for the graph structures, implemented using JUnit 5. The tests validate the correct creation of graphs, edge connections, and node values.
+## 🔮 Future Enhancements
 
-For example, the *AdjacencyListGraphTest* verifies the graph creation and edge connections:
+To make this project more comprehensive and impactful, the following features are planned:
 
-```java
-@Test
-void testAdjacencyListGraphCreation() {
-    // Setup
-    List<Edge> edges = new ArrayList<>();
-    edges.add(new Edge(0, 1, 6));
+1. **Graph Algorithms**:
+   - Implement traversal algorithms like BFS and DFS.
+   - Add shortest path algorithms like Dijkstra's and A*.
+   - Include minimum spanning tree algorithms (Prim's, Kruskal's).
 
-    // Action
-    AdjacencyListGraph graph = new AdjacencyListGraph(edges);
+2. **Visualization**:
+   - Integrate graph visualization tools (e.g., GraphStream or JGraphT).
+   - Provide a web-based interface for interactive graph exploration.
 
-    // Assert
-    List<Node> nodes = graph.getAdjacencyList().get(0);
-    assertNotNull(nodes);
-    assertEquals(1, nodes.get(0).getNext());
-    assertEquals(6, nodes.get(0).getWeight());
-}
-```
+3. **Performance Optimization**:
+   - Optimize the graph data structures for large-scale graphs.
+   - Add benchmarks to compare performance across different implementations.
 
-## Contributing
+4. **Real-World Applications**:
+   - Demonstrate use cases like social network analysis, dependency resolution, or route planning.
 
-This repository is open-source and licensed under the MIT license. Feel free to clone, fork, or modify the project as needed.
+5. **Language Support**:
+   - Extend the library to support Python or JavaScript for broader usability.
 
-## Future Plans
+---
 
-This repository focuses exclusively on graph data structures. Algorithms for graph traversal and search (like BFS, DFS) or shortest path finding (Dijkstra's, A*) are not covered here. These might be explored in future repositories.
+## 📚 Lessons Learned
 
-Feel free to reach out for feedback or suggestions!
+This project provided valuable insights into the following areas:
+
+1. **Graph Theory**:
+   - Deepened my understanding of graph representations and their trade-offs.
+
+2. **Software Design**:
+   - Applied the Factory Pattern to simplify graph creation.
+   - Designed modular and reusable components for scalability.
+
+3. **Testing**:
+   - Gained experience in writing comprehensive unit tests using JUnit 5.
+
+---
+
+## 🎯 Why This Project?
+
+This project demonstrates my ability to:
+
+- Design and implement complex data structures.
+- Write clean, maintainable, and well-documented code.
+- Use modern tools like Docker and Maven for efficient development.
+- Apply testing frameworks to ensure code quality and reliability.
+
+It also highlights my passion for solving problems using graph theory and my commitment to continuous learning.
+
+---
+
+## 📜 License
+
+This repository is licensed under the MIT License. You are free to clone, 
+modify, and contribute to this project. See the [LICENSE](LICENSE) file for 
+more details.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repository, submit pull requests, or open issues for suggestions.
+
+---
+
+## 📬 Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **GitHub**: [francisco-ricardo](https://github.com/francisco-ricardo)
+- **Email**: franciscoricardo.dev@gmail.com
+- **LinkedIn**: [francisco-aguiar](www.linkedin.com/in/francisco-aguiar-3ab650a0)
+
+
 
 
 
